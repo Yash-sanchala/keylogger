@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyboard monitor · Monitor Lab</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main><header>
+      <a class="brand" href="/" aria-label="Dashboard overview">Keyboard Monitor Lab <span aria-hidden="true">/</span> <strong>Keyboard monitor</strong></a>
+      <div class="header-right"><span class="local-badge"><span class="dot"></span> This computer</span><span class="avatar" aria-label="Local admin">A</span></div>
+    </header><section class="intro"><p class="eyebrow">LOCAL KEYBOARD VIEWER</p><h1>Keyboard monitor</h1><p class="subtitle">View keyboard input in a dedicated live session.</p></section>
+    <div id="keyboard" class="section-heading"><div><p class="eyebrow">INPUT ACTIVITY</p><h2>Keyboard monitor</h2></div><span class="section-caption">Live session · This computer</span></div>
+    <section class="controls" aria-label="Monitoring controls">
+      <div class="status-group"><span id="status" class="status" role="status">Connecting…</span><span id="connection">Connecting to your local service</span></div>
+      <div class="buttons">
+        <button id="start" class="primary" disabled>Start monitoring <span aria-hidden="true">↗</span></button>
+        <button id="stop" class="stop" disabled>Stop</button>
+        <button id="clear" disabled>Clear preview</button>
+        <button id="reconnect" hidden>Reconnect</button>
+      </div>
+    </section>
+    <p id="error" class="error" role="alert" hidden></p>
+    <div class="viewer-grid">
+      <section class="card key-card" aria-labelledby="key-title">
+        <div class="card-heading"><h2 id="key-title">Current key / combination</h2><span class="tag">LIVE</span></div>
+        <div id="key" class="key-display">—</div>
+        <div class="card-footer"><span class="caption">HELD KEYS</span><span id="held">None</span></div>
+      </section>
+      <section class="card preview-card" aria-labelledby="preview-title">
+        <div class="card-heading"><h2 id="preview-title">Typing preview</h2><span id="length" class="tag">0 / 48</span></div>
+        <div id="preview" class="preview" aria-label="Live typing preview"></div>
+        <div id="placeholder" class="placeholder">Your typing will appear here.</div>
+        <div class="card-footer">Stays until you click Clear. No automatic timeout.</div>
+      </section>
+    </div>
+<details><summary>About the typing preview</summary><p>The preview reflects printable keyboard events, including case and spaces. Backspace removes its last character; Enter and Tab appear as ↵ and ⇥. It cannot reproduce pasted text, IME composition, cursor edits, or changes made by another application. Some system shortcuts and protected windows do not deliver keyboard events.</p></details><footer><span>Local keyboard display only. No history, saving, or cloud connection.</span><span>Latest 48 characters · Preview is discarded when the console service closes.</span></footer></main></body></html>
